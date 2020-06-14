@@ -9,26 +9,18 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
     /// </summary>
     public static class DwarfsRafting_Codility_Hard
     {
-        public static int GetNumberOfDwarfes(int n, string s, string t)
+
+        /// <param name="n"> Size of the raft</param>
+        /// <param name="s"> Occupied seats by barrels</param>
+        /// <param name="t"> Occupied seats by dwarfs</param>
+        /// <returns> The number of dwarfs that can fit on the raft></returns>
+        public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int n, string s, string t)
         {
             // write your code in C# 6.0 with .NET 4.5 (Mono)
-            string[] barrelsPos = null;
-            string[] occSeats = null;
-            int barrelsCount = 0;
-            int occSeatsCount = 0;
 
-            if (!string.IsNullOrEmpty(s))
-            {
-                barrelsPos = s.Split(' ');
-                barrelsCount = barrelsPos.Count();
-            }
-            if (!string.IsNullOrEmpty(t))
-            {
-                occSeats = t.Split(' ');
-                occSeatsCount = occSeats.Count();
-            }
+            InitalizeVariables(s, t, out string[] positionsOfBarrels, out string[] occupiedSeatsByDwarfs, out int numberOfOccupiedSeatsByBarrels, out int numberOfOccupiedSeatsByDwarfs);
 
-            if (barrelsCount == n * n || occSeatsCount == n * n)
+            if (IsRaftDontHaveAnyFreeSeats(n, numberOfOccupiedSeatsByBarrels, numberOfOccupiedSeatsByDwarfs))
             {
                 return 0;
             }
@@ -41,11 +33,50 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
             var backLeft = spaceInPart;
             var backRight = spaceInPart;
 
-            var dfl = 0;
-            var dfr = 0;
-            var dbl = 0;
-            var dbr = 0;
+            CheckHowManyFreeSeatsAreAvalibleOnTheRaft(positionsOfBarrels, numberOfOccupiedSeatsByBarrels, halfSize, ref frontLeft, ref frontRight, ref backLeft, ref backRight);
 
+            var frontLeftSituatedDwarfs = 0;
+            var frontRightSituatedDwarfs = 0;
+            var backLeftSituatedDwarfs = 0;
+            var backRightSituatedDwarfs = 0;
+
+            CountNumberOfDwarfesInTheEachPartOfTheRaft(occupiedSeatsByDwarfs, numberOfOccupiedSeatsByDwarfs, halfSize, ref frontLeftSituatedDwarfs, ref frontRightSituatedDwarfs, ref backLeftSituatedDwarfs, ref backRightSituatedDwarfs);
+
+            if (IsRaftNotPossibleToBalance(frontLeft, frontRight, backRight, backLeft, frontLeftSituatedDwarfs, frontRightSituatedDwarfs, backLeftSituatedDwarfs, backRightSituatedDwarfs))
+            {
+                return -1;
+            }
+
+            int seatsForDwarfsOnTheHalfOfTheRaft = CheckHowManyDwarfsFitsOnTheHalfOfTheRaft(frontLeft, frontRight, backLeft, backRight);
+
+            return seatsForDwarfsOnTheHalfOfTheRaft * 2 - numberOfOccupiedSeatsByDwarfs;
+        }
+
+        private static void InitalizeVariables(string s, string t, out string[] barrelsPos, out string[] occSeats, out int barrelsCount, out int numberOfOccupiedSeatsByDwarfs)
+        {
+            barrelsPos = null;
+            occSeats = null;
+            barrelsCount = 0;
+            numberOfOccupiedSeatsByDwarfs = 0;
+            if (!string.IsNullOrEmpty(s))
+            {
+                barrelsPos = s.Split(' ');
+                barrelsCount = barrelsPos.Count();
+            }
+            if (!string.IsNullOrEmpty(t))
+            {
+                occSeats = t.Split(' ');
+                numberOfOccupiedSeatsByDwarfs = occSeats.Count();
+            }
+        }
+
+        private static bool IsRaftDontHaveAnyFreeSeats(int n, int numberOfOccupiedSeatsByBarrels, int numberOfOccupiedSeatsByDwarfs)
+        {
+            return numberOfOccupiedSeatsByBarrels == n * n || numberOfOccupiedSeatsByDwarfs == n * n;
+        }
+
+        private static void CheckHowManyFreeSeatsAreAvalibleOnTheRaft(string[] barrelsPos, int barrelsCount, int halfSize, ref int frontLeft, ref int frontRight, ref int backLeft, ref int backRight)
+        {
             for (int i = 0; i < barrelsCount; i++)
             {
                 int x = 0;
@@ -53,12 +84,12 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
                 if (barrelsPos[i].Length == 2)
                 {
                     x = (int)char.GetNumericValue(barrelsPos[i][0]);
-                    y = LiterarToNumber(barrelsPos[i][1]);
+                    y = LetterToNumber(barrelsPos[i][1]);
                 }
                 if (barrelsPos[i].Length == 3)
                 {
                     x = int.Parse("" + barrelsPos[i][0] + "" + barrelsPos[i][1]);
-                    y = LiterarToNumber(barrelsPos[i][2]);
+                    y = LetterToNumber(barrelsPos[i][2]);
                 }
 
 
@@ -77,7 +108,27 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
                 { backRight -= 1; }
 
             }
+        }
 
+        private static int CheckHowManyDwarfsFitsOnTheHalfOfTheRaft(int frontLeft, int frontRight, int backLeft, int backRight)
+        {
+            int frontLeft_frontRight = frontLeft + frontRight;
+            int backLeft_backRight = backLeft + backRight;
+            int frontLeft_backLeft = frontLeft + backLeft;
+            int frontRight_backRight = frontRight + backRight;
+
+            int[] arr = new int[]{
+            frontLeft_frontRight,
+            backLeft_backRight,
+            frontLeft_backLeft,
+            frontRight_backRight
+        };
+            int sumOfTwoPartsWithLessNumberOfFreeSpaces = arr.Min();
+            return sumOfTwoPartsWithLessNumberOfFreeSpaces;
+        }
+
+        private static void CountNumberOfDwarfesInTheEachPartOfTheRaft(string[] occSeats, int occSeatsCount, int halfSize, ref int dfl, ref int dfr, ref int dbl, ref int dbr)
+        {
             for (int i = 0; i < occSeatsCount; i++)
             {
                 int x = 0;
@@ -85,12 +136,12 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
                 if (occSeats[i].Length == 2)
                 {
                     x = (int)char.GetNumericValue(occSeats[i][0]);
-                    y = LiterarToNumber(occSeats[i][1]);
+                    y = LetterToNumber(occSeats[i][1]);
                 }
                 if (occSeats[i].Length == 3)
                 {
                     x = int.Parse("" + occSeats[i][0] + "" + occSeats[i][1]);
-                    y = LiterarToNumber(occSeats[i][2]);
+                    y = LetterToNumber(occSeats[i][2]);
                 }
 
                 if (x <= halfSize && y <= halfSize)
@@ -108,26 +159,6 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
                 { dbr += 1; }
 
             }
-
-            if (IsRaftNotPossibleToBalance(frontLeft, frontRight, backRight, backLeft, dfl, dfr, dbl, dbr))
-            {
-                return -1;
-            }
-
-            int frontLeft_frontRight = frontLeft + frontRight;
-            int backLeft_backRight = backLeft + backRight;
-            int frontLeft_backLeft = frontLeft + backLeft;
-            int frontRight_backRight = frontRight + backRight;
-
-            int[] arr = new int[]{
-            frontLeft_frontRight,
-            backLeft_backRight,
-            frontLeft_backLeft,
-            frontRight_backRight
-        };
-            int TwoMin = arr.Min();
-
-            return TwoMin * 2 - occSeatsCount;
         }
 
         private static bool IsRaftNotPossibleToBalance(int frontLeft, int frontRight, int backRight, int backLeft, int dfl, int dfr, int dbl, int dbr)
@@ -150,7 +181,7 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
             return false;
         }
 
-        private static int LiterarToNumber(char l)
+        private static int LetterToNumber(char l)
         {
             if ('A' == l) return 1;
             if ('B' == l) return 2;
