@@ -4,7 +4,6 @@ using System.Linq;
 namespace Algorithms.DwarfsRafting_Codility_Hard
 {
     /// <summary>
-    /// GetNumberOfDwarfes(int n, string s, string t) is the main method
     /// https://app.codility.com/programmers/lessons/91-tasks_from_indeed_prime_2016_challenge/dwarfs_rafting/
     /// </summary>
     public static class DwarfsRafting_Codility_Hard
