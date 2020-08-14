@@ -4,7 +4,7 @@ namespace Algorithms.OddOccurrencesInArray_Codility_Easy.FirstSolution_SlowPerfo
     /// <summary>
     /// https://app.codility.com/programmers/lessons/2-arrays/odd_occurrences_in_array/
     /// </summary>
-    class Codility_OddOccurrencesInArray_Easy_SlowPerformance
+    public static class Codility_OddOccurrencesInArray_Easy_SlowPerformance
     {
         /// <summary>
         /// n*n time complexity
