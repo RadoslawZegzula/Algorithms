@@ -1,7 +1,4 @@
 ﻿using Algorithms.OddOccurrencesInArray_Codility_Easy.FirstSolution_SlowPerformance;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace AlgorithmsXUnitTests.OddOccurrencesInArray_Codility_Easy_Tests.FirstSolution_SlowPerformance_Tests
