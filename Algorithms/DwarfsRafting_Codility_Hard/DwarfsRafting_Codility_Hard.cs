@@ -15,8 +15,6 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
         /// <returns> The number of dwarfs that can fit on the raft></returns>
         public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int n, string s, string t)
         {
-            // write your code in C# 6.0 with .NET 4.5 (Mono)
-
             InitalizeVariables(s, t, out string[] positionsOfBarrels, out string[] occupiedSeatsByDwarfs, out int numberOfOccupiedSeatsByBarrels, out int numberOfOccupiedSeatsByDwarfs);
 
             if (IsRaftDontHaveAnyFreeSeats(n, numberOfOccupiedSeatsByBarrels, numberOfOccupiedSeatsByDwarfs))
