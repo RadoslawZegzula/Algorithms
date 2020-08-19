@@ -5,9 +5,9 @@ namespace Algorithms.PermMissingElem_Codility_Easy
     /// <summary>
     /// https://app.codility.com/programmers/lessons/3-time_complexity/perm_missing_elem/
     /// </summary>
-    class PermMissingElem_Codility_Easy
+    public static class PermMissingElem_Codility_Easy
     {
-        public int ReturnMissingElement(int[] a)
+        public static int ReturnMissingElement(int[] a)
         {
             if (a.Length == 0)
             {
