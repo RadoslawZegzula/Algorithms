@@ -14,16 +14,15 @@ namespace AlgorithmsXUnitTests.PermMissingElem_Codility_Easy_Tests
             Assert.Equal(expected, result);
         }
 
-
         [Theory]
-        [InlineData(new int[] { 1, 2 }, 3)]
-        [InlineData(new int[] { 3, 1 }, 2)]
-        [InlineData(new int[] { 3, 2 }, 1)]
-        public void TwoElements(int[] x, int expected)
+        [InlineData(new int[] { 1, 2, 3, 4, 5 }, 6)]
+        [InlineData(new int[] { 2, 3, 4, 5, 6 }, 1)]
+        public void missing_first_or_last(int[] x, int expected)
         {
             int result = PermMissingElem_Codility_Easy.ReturnMissingElement(x);
 
             Assert.Equal(expected, result);
         }
+
     }
 }
