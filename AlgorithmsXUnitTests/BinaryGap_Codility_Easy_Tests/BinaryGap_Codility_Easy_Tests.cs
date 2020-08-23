@@ -16,5 +16,19 @@ namespace AlgorithmsXUnitTests.BinaryGap_Codility_Easy_Tests
             Assert.Equal(expected, result);
         }
 
+        /// <summary>
+        /// 6 == 110
+        /// 328 == 101001000
+        /// </summary>
+        [Theory]
+        [InlineData(6, 1)]
+        [InlineData(328, 3)]
+        public void TrailingZeros(int n, int expected)
+        {
+            int result = BinaryGap_Codility_Easy.FindLongestSequenceOfBinaryZeros(n);
+
+            Assert.Equal(expected, result);
+        }
+
     }
 }
