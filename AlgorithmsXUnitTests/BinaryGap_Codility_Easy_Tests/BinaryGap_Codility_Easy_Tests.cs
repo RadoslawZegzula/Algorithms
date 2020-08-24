@@ -30,5 +30,21 @@ namespace AlgorithmsXUnitTests.BinaryGap_Codility_Easy_Tests
             Assert.Equal(expected, result);
         }
 
+        /// <summary>
+        /// 6291457 = 11000000000000000000001
+        /// 74901729 = 100011101101110100011100001
+        /// 805306373 = 110000000000000000000000000101
+        /// </summary>
+        [Theory]
+        [InlineData(6291457, 20)]
+        [InlineData(74901729, 4)]
+        [InlineData(805306373, 25)]
+        public void LargeNumbers(int n, int expected)
+        {
+            int result = BinaryGap_Codility_Easy.FindLongestSequenceOfBinaryZeros(n);
+
+            Assert.Equal(expected, result);
+        }
+
     }
 }
