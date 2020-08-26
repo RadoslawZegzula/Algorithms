@@ -17,7 +17,7 @@ namespace AlgorithmsXUnitTests.PermMissingElem_Codility_Easy_Tests
         [Theory]
         [InlineData(new int[] { 1, 2, 3, 4, 5 }, 6)]
         [InlineData(new int[] { 2, 3, 4, 5, 6 }, 1)]
-        public void missing_first_or_last(int[] x, int expected)
+        public void MissingFirstOrLast(int[] x, int expected)
         {
             int result = PermMissingElem_Codility_Easy.ReturnMissingElement(x);
 
