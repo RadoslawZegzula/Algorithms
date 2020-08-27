@@ -9,9 +9,9 @@ namespace AlgorithmsXUnitTests.FrogJmp_Codility_Easy_Tests
         [InlineData(10, 85, 30, 3)]
         [InlineData(0, 91, 30, 4)]
         [InlineData(10, 85, 90, 1)]
-        public void ExampleTests(int x, int y, int d, int expected)
+        public void ExampleTests(int startingPosition, int endingPosition, int jumpDistance, int expected)
         {
-            int result = FrogJmp_Codility_Easy.CountMinimalNumberOfJumpsFromXToY(x, y, d);
+            int result = FrogJmp_Codility_Easy.CountMinimalNumberOfJumpsFromXToY(startingPosition, endingPosition, jumpDistance);
 
             Assert.Equal(expected, result);
         }
