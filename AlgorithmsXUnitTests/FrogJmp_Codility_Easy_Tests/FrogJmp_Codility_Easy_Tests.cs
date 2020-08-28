@@ -11,7 +11,7 @@ namespace AlgorithmsXUnitTests.FrogJmp_Codility_Easy_Tests
         [InlineData(10, 85, 90, 1)]
         public void ExampleTests(int startingPosition, int endingPosition, int jumpDistance, int expected)
         {
-            int result = FrogJmp_Codility_Easy.CountMinimalNumberOfJumpsFromXToY(startingPosition, endingPosition, jumpDistance);
+            int result = FrogJmp_Codility_Easy.CountMinimalNumberOfJumps(startingPosition, endingPosition, jumpDistance);
 
             Assert.Equal(expected, result);
         }

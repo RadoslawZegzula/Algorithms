@@ -6,15 +6,15 @@ namespace Algorithms.FrogJmp_Codility_Easy
     /// </summary>
     public static class FrogJmp_Codility_Easy
     {
-        public static int CountMinimalNumberOfJumpsFromXToY(int x, int y, int d)
+        public static int CountMinimalNumberOfJumps(int startingPosition, int endingPosition, int jumpDistance)
             =>
-            (y - x) / d * d 
+            (endingPosition - startingPosition) / jumpDistance * jumpDistance 
             >=
-            (y - x)
+            (endingPosition - startingPosition)
             ?
-            (y - x) / d
+            (endingPosition - startingPosition) / jumpDistance
             :
-            (y - x) / d + 1;
+            (endingPosition - startingPosition) / jumpDistance + 1;
 
     }
 }
