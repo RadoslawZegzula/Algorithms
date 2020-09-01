@@ -25,6 +25,16 @@ namespace AlgorithmsXUnitTests.OddOccurrencesInArray_Codility_Easy_Tests.FirstSo
             Assert.Equal(expected, result);
         }
 
+        [Theory]
+        [InlineData(new int[] { 9, 9, 1 }, 1)]
+        [InlineData(new int[] { 9, 1, 9 }, 1)]
+        [InlineData(new int[] { 1, 9, 9 }, 1)]
+        public void ThreeElements(int[] arr, int expected)
+        {
+            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.Solution(arr);
+
+            Assert.Equal(expected, result);
+        }
 
     }
 }
