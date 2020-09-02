@@ -14,7 +14,7 @@ namespace Algorithms.OddOccurrencesInArray_Codility_Easy.SecondSolution_BetterPe
         /// </summary>
         /// <param name="a">non empty number array</param>
         /// <returns>The odd occurent number</returns>
-        public static int Solution(int[] a)
+        public static int FindOddOccurrenceInArray(int[] a)
         {
             Array.Sort(a);
             int c = 0;

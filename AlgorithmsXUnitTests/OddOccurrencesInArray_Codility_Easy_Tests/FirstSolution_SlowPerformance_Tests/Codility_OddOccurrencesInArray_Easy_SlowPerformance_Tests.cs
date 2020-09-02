@@ -9,7 +9,7 @@ namespace AlgorithmsXUnitTests.OddOccurrencesInArray_Codility_Easy_Tests.FirstSo
         [InlineData(new int[] { 9, 3, 9, 3, 9, 7, 9}, 7)]
         public void ExampleTest(int[] arr, int expected)
         {
-            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.Solution(arr);
+            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.FindOddOccurrenceInArray(arr);
 
             Assert.Equal(expected, result);
         }
@@ -20,7 +20,7 @@ namespace AlgorithmsXUnitTests.OddOccurrencesInArray_Codility_Easy_Tests.FirstSo
         [InlineData(new int[] { 33 }, 33)]
         public void SingleElement(int[] arr, int expected)
         {
-            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.Solution(arr);
+            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.FindOddOccurrenceInArray(arr);
 
             Assert.Equal(expected, result);
         }
@@ -31,7 +31,7 @@ namespace AlgorithmsXUnitTests.OddOccurrencesInArray_Codility_Easy_Tests.FirstSo
         [InlineData(new int[] { 1, 9, 9 }, 1)]
         public void ThreeElements(int[] arr, int expected)
         {
-            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.Solution(arr);
+            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.FindOddOccurrenceInArray(arr);
 
             Assert.Equal(expected, result);
         }

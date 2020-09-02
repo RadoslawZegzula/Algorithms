@@ -11,7 +11,7 @@ namespace Algorithms.OddOccurrencesInArray_Codility_Easy.FirstSolution_SlowPerfo
         /// </summary>
         /// <param name="a">non empty number array</param>
         /// <returns>Odd occurent number</returns>
-        public static int Solution(int[] a)
+        public static int FindOddOccurrenceInArray(int[] a)
         {
             int x = a[0];
             for (int i = 0; i < a.Length; i++)
