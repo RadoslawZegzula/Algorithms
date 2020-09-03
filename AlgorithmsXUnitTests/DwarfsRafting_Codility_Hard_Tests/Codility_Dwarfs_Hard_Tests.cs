@@ -17,5 +17,14 @@ namespace AlgorithmsXUnitTests.DwarfsRafting_Codility_Hard_Tests
             Assert.Equal(expected, result);
         }
 
+        [Theory]
+        [InlineData(0, "","", 0)]
+        public void SizeZeroRaft(int size, string barrels, string dwarfs, int expected)
+        {
+            int result = DwarfsRafting_Codility_Hard.ReturnNumberOfDwarfesThatCanFitOnTheRaft(size, barrels, dwarfs);
+
+            Assert.Equal(expected, result);
+        }
+
     }
 }
