@@ -26,5 +26,15 @@ namespace AlgorithmsXUnitTests.DwarfsRafting_Codility_Hard_Tests
             Assert.Equal(expected, result);
         }
 
+        [Theory]
+        [InlineData(2, "1A 1B 2A 2B", "", 0)]
+        [InlineData(3, "1A 1B 1C 2A 2B 2C 3A 3B 3C", "", 0)]
+        public void RaftFullOfBarrels(int size, string barrels, string dwarfs, int expected)
+        {
+            int result = DwarfsRafting_Codility_Hard.ReturnNumberOfDwarfesThatCanFitOnTheRaft(size, barrels, dwarfs);
+
+            Assert.Equal(expected, result);
+        }
+
     }
 }
