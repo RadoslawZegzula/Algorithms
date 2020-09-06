@@ -18,7 +18,7 @@ namespace Algorithms.CyclicRotation_Codility_Easy
 
             if (k > a.Length)
             {
-                k = k % a.Length;
+                k %= a.Length;
             }
 
             if (k == a.Length)
