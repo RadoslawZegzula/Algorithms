@@ -9,35 +9,35 @@ namespace Algorithms.CyclicRotation_Codility_Easy
     /// </summary>
     class CyclicRotation_Codility_Easy
     {
-        public int[] MoveNumbersRight(int[] a, int k)
+        public int[] MoveNumbersRight(int[] array, int numberOfSteps)
         {
-            if (a.Length == 0 || k == 0)
+            if (array.Length == 0 || numberOfSteps == 0)
             {
-                return a;
+                return array;
             }
 
-            if (k > a.Length)
+            if (numberOfSteps > array.Length)
             {
-                k %= a.Length;
+                numberOfSteps %= array.Length;
             }
 
-            if (k == a.Length)
+            if (numberOfSteps == array.Length)
             {
-                return a;
+                return array;
             }
 
-            int[] arr = new int[a.Length];
+            int[] arr = new int[array.Length];
             int odj = 1;
 
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (k > i)
+                if (numberOfSteps > i)
                 {
-                    arr[i] = a[a.Length - k + i];
+                    arr[i] = array[array.Length - numberOfSteps + i];
                 }
-                if (k <= i)
+                if (numberOfSteps <= i)
                 {
-                    arr[a.Length - odj] = a[a.Length - 1 - i];
+                    arr[array.Length - odj] = array[array.Length - 1 - i];
                     odj++;
                 }
             }
