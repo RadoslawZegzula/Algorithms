@@ -12,25 +12,25 @@ namespace Algorithms.OddOccurrencesInArray_Codility_Easy.SecondSolution_BetterPe
         /// <summary>
         /// O(N) or O(N*log(N)) time complexity
         /// </summary>
-        /// <param name="a">non empty number array</param>
+        /// <param name="array">non empty number array</param>
         /// <returns>The odd occurent number</returns>
-        public static int FindOddOccurrenceInArray(int[] a)
+        public static int FindOddOccurrenceInArray(int[] array)
         {
-            Array.Sort(a);
+            Array.Sort(array);
             int c = 0;
-            int temp = a[0];
+            int temp = array[0];
 
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (a[i] != temp && c % 2 == 1)
+                if (array[i] != temp && c % 2 == 1)
                 {
                     break;
                 }
 
-                temp = a[i];
+                temp = array[i];
                 c++;
 
-                if (a[i] != temp)
+                if (array[i] != temp)
                 {
                     return temp;
                 }
