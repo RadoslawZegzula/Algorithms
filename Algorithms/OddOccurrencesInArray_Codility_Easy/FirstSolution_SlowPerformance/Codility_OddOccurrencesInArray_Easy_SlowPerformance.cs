@@ -9,18 +9,18 @@ namespace Algorithms.OddOccurrencesInArray_Codility_Easy.FirstSolution_SlowPerfo
         /// <summary>
         /// n*n time complexity
         /// </summary>
-        /// <param name="a">non empty number array</param>
+        /// <param name="array">non empty number array</param>
         /// <returns>Odd occurent number</returns>
-        public static int FindOddOccurrenceInArray(int[] a)
+        public static int FindOddOccurrenceInArray(int[] array)
         {
-            int x = a[0];
-            for (int i = 0; i < a.Length; i++)
+            int x = array[0];
+            for (int i = 0; i < array.Length; i++)
             {
-                x = a[i];
+                x = array[i];
                 int c = 0;
-                for (int j = 0; j < a.Length; j++)
+                for (int j = 0; j < array.Length; j++)
                 {
-                    if (x == a[j])
+                    if (x == array[j])
                     {
                         c++;
                     }
