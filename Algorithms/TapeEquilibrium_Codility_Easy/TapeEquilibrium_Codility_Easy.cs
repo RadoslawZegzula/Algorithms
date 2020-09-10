@@ -8,25 +8,25 @@ namespace Algorithms.TapeEquilibrium_Codility_Easy
     /// </summary>
     class TapeEquilibrium_Codility_Easy
     {
-        public int ReturnMinimalDiffrencBetweenNumbers(int[] a)
+        public int ReturnMinimalDiffrencBetweenNumbers(int[] array)
         {
             int min = Int32.MaxValue;
             int c = 0;
             int tape = 0;
-            int sum = a.Sum();
-            for (int i = 0; i < a.Length - 1; i++)
+            int sum = array.Sum();
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                c += a[i];
-                if (a[i] >= 0 && sum >= 0)
+                c += array[i];
+                if (array[i] >= 0 && sum >= 0)
                 {
                     tape = Math.Abs(c - Math.Abs(c - sum));
                 }
-                if (a[i] >= 0 && sum <= 0)
+                if (array[i] >= 0 && sum <= 0)
                 {
                     tape = Math.Abs(c) + (sum - c);
 
                 }
-                if (a[i] < 0)
+                if (array[i] < 0)
                 {
                     tape = Math.Abs(c) + (sum - c);
                 }
