@@ -10,7 +10,7 @@ namespace Algorithms.TapeEquilibrium_Codility_Easy
     {
         public int ReturnMinimalDiffrencBetweenNumbers(int[] array)
         {
-            int min = Int32.MaxValue;
+            int min = int.MaxValue;
             int c = 0;
             int tape = 0;
             int sum = array.Sum();
