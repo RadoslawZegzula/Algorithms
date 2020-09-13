@@ -7,9 +7,9 @@ namespace Algorithms.BinaryGap_Codility_Easy
     /// </summary>
     public static class BinaryGap_Codility_Easy
     {
-        public static int FindLongestSequenceOfBinaryZeros(int n)
+        public static int FindLongestSequenceOfBinaryZeros(int number)
         {
-            var binary = Convert.ToString(n, 2);
+            var binary = Convert.ToString(number, 2);
             var m = 0;
             var max = 0;
 
