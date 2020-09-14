@@ -10,23 +10,23 @@ namespace Algorithms.BinaryGap_Codility_Easy
         public static int FindLongestSequenceOfBinaryZeros(int number)
         {
             var binary = Convert.ToString(number, 2);
-            var m = 0;
+            var currentSequence = 0;
             var max = 0;
 
             for (int i = 0; i < binary.Length; i++)
             {
-                if (binary[i] == '1' && m > max)
+                if (binary[i] == '1' && currentSequence > max)
                 {
-                    max = m;
+                    max = currentSequence;
                 }
 
                 if (binary[i] == '1')
                 {
-                    m = 0;
+                    currentSequence = 0;
                 }
                 if (binary[i] == '0')
                 {
-                    m++;
+                    currentSequence++;
                 }
             }
             return max;
