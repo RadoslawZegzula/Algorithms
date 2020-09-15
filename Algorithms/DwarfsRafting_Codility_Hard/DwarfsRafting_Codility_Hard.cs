@@ -9,21 +9,21 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
     public static class DwarfsRafting_Codility_Hard
     {
 
-        /// <param name="n"> Size of the raft</param>
+        /// <param name="raftSize"> Size of the raft</param>
         /// <param name="s"> Occupied seats by barrels</param>
         /// <param name="t"> Occupied seats by dwarfs</param>
         /// <returns> The number of dwarfs that can fit on the raft></returns>
-        public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int n, string s, string t)
+        public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int raftSize, string s, string t)
         {
             InitalizeVariables(s, t, out string[] positionsOfBarrels, out string[] occupiedSeatsByDwarfs, out int numberOfOccupiedSeatsByBarrels, out int numberOfOccupiedSeatsByDwarfs);
 
-            if (IsRaftDontHaveAnyFreeSeats(n, numberOfOccupiedSeatsByBarrels, numberOfOccupiedSeatsByDwarfs))
+            if (IsRaftDontHaveAnyFreeSeats(raftSize, numberOfOccupiedSeatsByBarrels, numberOfOccupiedSeatsByDwarfs))
             {
                 return 0;
             }
 
-            var halfSize = n / 2;
-            var spaceInPart = n * n / 4;
+            var halfSize = raftSize / 2;
+            var spaceInPart = raftSize * raftSize / 4;
 
             var frontLeft = spaceInPart;
             var frontRight = spaceInPart;
