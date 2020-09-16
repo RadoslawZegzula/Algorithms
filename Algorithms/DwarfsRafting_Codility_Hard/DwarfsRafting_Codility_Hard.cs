@@ -10,12 +10,12 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
     {
 
         /// <param name="raftSize"> Size of the raft</param>
-        /// <param name="s"> Occupied seats by barrels</param>
+        /// <param name="seatsForBarrels"> Occupied seats by barrels</param>
         /// <param name="t"> Occupied seats by dwarfs</param>
         /// <returns> The number of dwarfs that can fit on the raft></returns>
-        public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int raftSize, string s, string t)
+        public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int raftSize, string seatsForBarrels, string t)
         {
-            InitalizeVariables(s, t, out string[] positionsOfBarrels, out string[] occupiedSeatsByDwarfs, out int numberOfOccupiedSeatsByBarrels, out int numberOfOccupiedSeatsByDwarfs);
+            InitalizeVariables(seatsForBarrels, t, out string[] positionsOfBarrels, out string[] occupiedSeatsByDwarfs, out int numberOfOccupiedSeatsByBarrels, out int numberOfOccupiedSeatsByDwarfs);
 
             if (IsRaftDontHaveAnyFreeSeats(raftSize, numberOfOccupiedSeatsByBarrels, numberOfOccupiedSeatsByDwarfs))
             {
