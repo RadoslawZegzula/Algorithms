@@ -8,10 +8,6 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
     /// </summary>
     public static class DwarfsRafting_Codility_Hard
     {
-
-        /// <param name="raftSize"> Size of the raft</param>
-        /// <param name="seatsForBarrels"> Occupied seats by barrels</param>
-        /// <param name="seatsOccupiedByDwarfs"> Occupied seats by dwarfs</param>
         /// <returns> The number of dwarfs that can fit on the raft></returns>
         public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int raftSize, string seatsForBarrels, string seatsOccupiedByDwarfs)
         {
