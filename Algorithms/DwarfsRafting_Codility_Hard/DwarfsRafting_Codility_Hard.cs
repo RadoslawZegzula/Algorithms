@@ -65,7 +65,8 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
 
         private static bool IsRaftDontHaveAnyFreeSeats(int n, int numberOfOccupiedSeatsByBarrels, int numberOfOccupiedSeatsByDwarfs)
         {
-            return numberOfOccupiedSeatsByBarrels == n * n || numberOfOccupiedSeatsByDwarfs == n * n;
+            int maxFreeSeats = n * n;
+            return numberOfOccupiedSeatsByBarrels == maxFreeSeats || numberOfOccupiedSeatsByDwarfs == maxFreeSeats;
         }
 
         private static void CheckHowManyFreeSeatsAreAvalibleOnTheRaft(string[] barrelsPos, int barrelsCount, int halfSize, ref int frontLeft, ref int frontRight, ref int backLeft, ref int backRight)
