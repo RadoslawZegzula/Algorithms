@@ -63,9 +63,9 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
             }
         }
 
-        private static bool IsRaftDontHaveAnyFreeSeats(int n, int numberOfOccupiedSeatsByBarrels, int numberOfOccupiedSeatsByDwarfs)
+        private static bool IsRaftDontHaveAnyFreeSeats(int raftLength, int numberOfOccupiedSeatsByBarrels, int numberOfOccupiedSeatsByDwarfs)
         {
-            int maxFreeSeats = n * n;
+            int maxFreeSeats = raftLength * raftLength;
             return numberOfOccupiedSeatsByBarrels == maxFreeSeats || numberOfOccupiedSeatsByDwarfs == maxFreeSeats;
         }
 
