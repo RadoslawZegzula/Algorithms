@@ -175,34 +175,34 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
             return false;
         }
 
-        private static int LetterToNumber(char l)
+        private static int LetterToNumber(char letter)
         {
-            if ('A' == l) return 1;
-            if ('B' == l) return 2;
-            if ('C' == l) return 3;
-            if ('D' == l) return 4;
-            if ('E' == l) return 5;
-            if ('F' == l) return 6;
-            if ('G' == l) return 7;
-            if ('H' == l) return 8;
-            if ('I' == l) return 9;
-            if ('J' == l) return 10;
-            if ('K' == l) return 11;
-            if ('L' == l) return 12;
-            if ('M' == l) return 13;
-            if ('N' == l) return 14;
-            if ('O' == l) return 15;
-            if ('P' == l) return 16;
-            if ('Q' == l) return 17;
-            if ('R' == l) return 18;
-            if ('S' == l) return 19;
-            if ('T' == l) return 20;
-            if ('U' == l) return 21;
-            if ('V' == l) return 22;
-            if ('W' == l) return 23;
-            if ('X' == l) return 24;
-            if ('Y' == l) return 25;
-            if ('Z' == l) return 26;
+            if ('A' == letter) return 1;
+            if ('B' == letter) return 2;
+            if ('C' == letter) return 3;
+            if ('D' == letter) return 4;
+            if ('E' == letter) return 5;
+            if ('F' == letter) return 6;
+            if ('G' == letter) return 7;
+            if ('H' == letter) return 8;
+            if ('I' == letter) return 9;
+            if ('J' == letter) return 10;
+            if ('K' == letter) return 11;
+            if ('L' == letter) return 12;
+            if ('M' == letter) return 13;
+            if ('N' == letter) return 14;
+            if ('O' == letter) return 15;
+            if ('P' == letter) return 16;
+            if ('Q' == letter) return 17;
+            if ('R' == letter) return 18;
+            if ('S' == letter) return 19;
+            if ('T' == letter) return 20;
+            if ('U' == letter) return 21;
+            if ('V' == letter) return 22;
+            if ('W' == letter) return 23;
+            if ('X' == letter) return 24;
+            if ('Y' == letter) return 25;
+            if ('Z' == letter) return 26;
 
             return -1;
         }
