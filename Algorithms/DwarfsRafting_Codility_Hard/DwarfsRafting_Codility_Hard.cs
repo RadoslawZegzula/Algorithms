@@ -8,7 +8,6 @@ namespace Algorithms.DwarfsRafting_Codility_Hard
     /// </summary>
     public static class DwarfsRafting_Codility_Hard
     {
-        /// <returns> The number of dwarfs that can fit on the raft></returns>
         public static int ReturnNumberOfDwarfesThatCanFitOnTheRaft(int raftLength, string seatsForBarrels, string seatsOccupiedByDwarfs)
         {
             InitalizeVariables(seatsForBarrels, seatsOccupiedByDwarfs, out string[] positionsOfBarrels, out string[] occupiedSeatsByDwarfs, out int numberOfOccupiedSeatsByBarrels, out int numberOfOccupiedSeatsByDwarfs);
