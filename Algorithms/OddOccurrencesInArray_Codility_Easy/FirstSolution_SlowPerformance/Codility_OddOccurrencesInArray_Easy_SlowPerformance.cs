@@ -9,7 +9,6 @@ namespace Algorithms.OddOccurrencesInArray_Codility_Easy.FirstSolution_SlowPerfo
         /// <summary>
         /// n*n time complexity
         /// </summary>
-        /// <param name="array">non empty number array</param>
         /// <returns>Odd occurent number</returns>
         public static int FindOddOccurrenceInArray(int[] array)
         {
