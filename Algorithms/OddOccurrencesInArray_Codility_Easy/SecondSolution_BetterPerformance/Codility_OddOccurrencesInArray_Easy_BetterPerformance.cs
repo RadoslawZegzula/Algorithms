@@ -12,7 +12,6 @@ namespace Algorithms.OddOccurrencesInArray_Codility_Easy.SecondSolution_BetterPe
         /// <summary>
         /// O(N) or O(N*log(N)) time complexity
         /// </summary>
-        /// <returns>The odd occurent number</returns>
         public static int FindOddOccurrenceInArray(int[] array)
         {
             Array.Sort(array);
