@@ -7,9 +7,9 @@ namespace AlgorithmsXUnitTests.OddOccurrencesInArray_Codility_Easy_Tests.SecondS
     {
         [Theory]
         [InlineData(new int[] { 9, 3, 9, 3, 9, 7, 9 }, 7)]
-        public void ExampleTest(int[] arr, int expected)
+        public void ExampleTest(int[] array, int expected)
         {
-            int result = Codility_OddOccurrencesInArray_Easy_BetterPerformance.FindOddOccurrenceInArray(arr);
+            int result = Codility_OddOccurrencesInArray_Easy_BetterPerformance.FindOddOccurrenceInArray(array);
 
             Assert.Equal(expected, result);
         }
