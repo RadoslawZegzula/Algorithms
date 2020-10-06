@@ -18,9 +18,9 @@ namespace AlgorithmsXUnitTests.OddOccurrencesInArray_Codility_Easy_Tests.FirstSo
         [InlineData(new int[] { 9 }, 9)]
         [InlineData(new int[] { 42 }, 42)]
         [InlineData(new int[] { 33 }, 33)]
-        public void SingleElement(int[] arr, int expected)
+        public void SingleElement(int[] array, int expected)
         {
-            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.FindOddOccurrenceInArray(arr);
+            int result = Codility_OddOccurrencesInArray_Easy_SlowPerformance.FindOddOccurrenceInArray(array);
 
             Assert.Equal(expected, result);
         }
