@@ -9,9 +9,9 @@ namespace AlgorithmsXUnitTests.BinaryGap_Codility_Easy_Tests
         [InlineData(1041, 5)]
         [InlineData(15, 0)]
         [InlineData(32, 0)]
-        public void ExampleTests(int n, int expected)
+        public void ExampleTests(int number, int expected)
         {
-            int result = BinaryGap_Codility_Easy.FindLongestSequenceOfBinaryZeros(n);
+            int result = BinaryGap_Codility_Easy.FindLongestSequenceOfBinaryZeros(number);
 
             Assert.Equal(expected, result);
         }
