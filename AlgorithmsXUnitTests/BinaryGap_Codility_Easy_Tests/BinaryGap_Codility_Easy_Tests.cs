@@ -23,9 +23,9 @@ namespace AlgorithmsXUnitTests.BinaryGap_Codility_Easy_Tests
         [Theory]
         [InlineData(6, 0)]
         [InlineData(328, 2)]
-        public void TrailingZeros(int n, int expected)
+        public void TrailingZeros(int number, int expected)
         {
-            int result = BinaryGap_Codility_Easy.FindLongestSequenceOfBinaryZeros(n);
+            int result = BinaryGap_Codility_Easy.FindLongestSequenceOfBinaryZeros(number);
 
             Assert.Equal(expected, result);
         }
