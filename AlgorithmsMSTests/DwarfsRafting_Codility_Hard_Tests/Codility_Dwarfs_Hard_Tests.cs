@@ -37,7 +37,6 @@ namespace DwarfsRafting_Codility_Hard_Tests
             string barrels = "";
             string dwarfs = "";
 
-
             int result = DwarfsRafting_Codility_Hard.ReturnNumberOfDwarfesThatCanFitOnTheRaft(size, barrels, dwarfs);
 
             Assert.AreEqual(16, result);
