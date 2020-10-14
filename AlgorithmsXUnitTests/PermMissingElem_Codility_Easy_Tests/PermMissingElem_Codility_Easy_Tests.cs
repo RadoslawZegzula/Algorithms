@@ -28,6 +28,9 @@ namespace AlgorithmsXUnitTests.PermMissingElem_Codility_Easy_Tests
         [InlineData(new int[] { }, 1)]
         [InlineData(new int[] { 1 }, 2)]
         [InlineData(new int[] { 2 }, 1)]
+        [InlineData(new int[] { 3 }, 1)]
+        [InlineData(new int[] { 4 }, 1)]
+        [InlineData(new int[] { 5 }, 1)]
         public void SingleOrEmpty(int[] array, int expected)
         {
             int result = PermMissingElem_Codility_Easy.ReturnMissingElement(array);
