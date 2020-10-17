@@ -5,6 +5,12 @@ namespace AlgorithmsXUnitTests.BinaryGap_Codility_Easy_Tests
 {
     public class BinaryGap_Codility_Easy_Tests
     {
+
+        /// <summary>
+        /// 1041 == 10000010001
+        /// 15 == 1111
+        /// 32 == 100000
+        /// </summary>
         [Theory]
         [InlineData(1041, 5)]
         [InlineData(15, 0)]
