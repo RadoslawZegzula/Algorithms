@@ -10,11 +10,13 @@ namespace AlgorithmsXUnitTests.BinaryGap_Codility_Easy_Tests
         /// 1041 == 10000010001
         /// 15 == 1111
         /// 32 == 100000
+        /// 10241 == 10100000000001
         /// </summary>
         [Theory]
         [InlineData(1041, 5)]
         [InlineData(15, 0)]
         [InlineData(32, 0)]
+        [InlineData(10241, 10)]
         public void ExampleTests(int number, int expected)
         {
             int result = BinaryGap_Codility_Easy.FindLongestSequenceOfBinaryZeros(number);
