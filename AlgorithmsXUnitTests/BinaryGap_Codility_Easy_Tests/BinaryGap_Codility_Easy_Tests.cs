@@ -29,11 +29,13 @@ namespace AlgorithmsXUnitTests.BinaryGap_Codility_Easy_Tests
         /// 328 == 101001000
         /// 1224 == 10011001000
         /// 7168 == 1110000000000
+        /// 4160 == 1000001000000
         /// </summary>
         [Theory]
         [InlineData(6, 0)]
         [InlineData(328, 2)]
         [InlineData(1224, 2)]
+        [InlineData(4160, 5)]
         [InlineData(7168, 0)]
         public void shouldWorkWith_TrailingZeros(int number, int expected)
         {
