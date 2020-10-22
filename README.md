@@ -1,6 +1,6 @@
 # Algorithms
 Repository created to store my algorithms answers from sites like Codility or Codewars.
-Additionally, I created some tests for them.
+Additionally, I created some tests for them in MSTests and XUnit.
 
 ---
 **Dwarfs Rafting**  [CodeHere!](Algorithms/DwarfsRafting_Codility_Hard/DwarfsRafting_Codility_Hard.cs)  
